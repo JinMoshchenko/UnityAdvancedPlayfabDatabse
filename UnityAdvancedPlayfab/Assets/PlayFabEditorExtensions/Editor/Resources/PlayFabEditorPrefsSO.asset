@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0199c11aa6f514784c5c69cd8378d8, type: 3}
+  m_Name: PlayFabEditorPrefsSO
+  m_EditorClassIdentifier: 
+  DevAccountEmail: jinmoshchenko@gmail.com
+  DevAccountToken: e99j6ay1ic85hdgy44q47kimkzyuewqak9gfgmwo31rk5a8pg1r8eubrw8ifahne138tob1e7c4mr7qr3zzqzz7ywn7dagaedihbx7nsirqu9bq8p9dqmmky3dz4q79y8yx5p3gzph5toamp87aj7oyu48e4saxenxjhbicify43wbh1m844bnm18xguy4bahdc9otj8
+  SelectedStudio: Breathing Games
+  SdkPath: Assets/PlayFabSDK
+  EdExPath: 
+  LocalCloudScriptPath: 
+  PanelIsShown: 0
+  curMainMenuIdx: 1
+  curSubMenuIdx: 0
