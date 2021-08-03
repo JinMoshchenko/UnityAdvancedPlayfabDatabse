@@ -5,20 +5,23 @@ using TMPro;
 public class Character
 {
     public int _STRENGTH, _AGILITY, _STAMINA, _KNOWLEDGE, _ABILITIES;
+    public Vector3 _SCALE, _POSITION;
 
-    public Character(int _STRENGTH, int _AGILITY, int _STAMINA, int _KNOWLEDGE, int _ABILITIES)
+    public Character(int _STRENGTH, int _AGILITY, int _STAMINA, int _KNOWLEDGE, int _ABILITIES, Vector3 _SCALE, Vector3 _POSITION)
     {
         this._STRENGTH = _STRENGTH;
         this._AGILITY = _AGILITY;
         this._STAMINA = _STAMINA;
         this._KNOWLEDGE = _KNOWLEDGE;
         this._ABILITIES = _ABILITIES;
+        this._SCALE = _SCALE;
+        this._POSITION = _POSITION;
     }
 }
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    public Transform player;
     [SerializeField] private GameObject logo;
     [SerializeField] private GameObject winLogo;
 
@@ -48,7 +51,7 @@ public class Game : MonoBehaviour
 
     public Character ReturnClass()
     {
-        return new Character(STRENGTH, AGILITY, STAMINA, KNOWLEDGE, ABILITIES);
+        return new Character(STRENGTH, AGILITY, STAMINA, KNOWLEDGE, ABILITIES, player.localScale, player.position);
     }
     public void CalculateMultipliers()
     {

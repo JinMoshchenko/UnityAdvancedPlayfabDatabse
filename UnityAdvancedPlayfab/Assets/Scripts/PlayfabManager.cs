@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using PlayFab;
 using PlayFab.ClientModels;
-using Newtonsoft.Json;
 
 public class PlayfabManager : MonoBehaviour
 {
@@ -104,7 +103,7 @@ public class PlayfabManager : MonoBehaviour
         {
             Data = new Dictionary<string, string>
             {
-                {"Stats", JsonConvert.SerializeObject(GameObject.Find("GameContainer").GetComponent<Game>().ReturnClass())}
+                {"Stats", JsonUtility.ToJson(GameObject.Find("GameContainer").GetComponent<Game>().ReturnClass())}
             }
         };
         PlayFabClientAPI.UpdateUserData(request, OnCharacterDataSend, OnError);
@@ -122,14 +121,16 @@ public class PlayfabManager : MonoBehaviour
         Debug.Log("Received character data!");
         if(result.Data != null && result.Data.ContainsKey("Stats"))
         {
-            game = GameObject.Find("GameContainer").GetComponent<Game>();      
-            character = JsonConvert.DeserializeObject<Character>(result.Data["Stats"].Value);
+            game = GameObject.Find("GameContainer").GetComponent<Game>();
+            character = JsonUtility.FromJson<Character>(result.Data["Stats"].Value);
             game.SetUIValues(character);
             game.STRENGTH = character._STRENGTH;
             game.AGILITY = character._AGILITY;
             game.STAMINA = character._STAMINA;
             game.KNOWLEDGE = character._KNOWLEDGE;
             game.ABILITIES = character._ABILITIES;
+            game.player.localScale = character._SCALE;
+            game.player.position = character._POSITION;
         }
     }
     #endregion
