@@ -131,6 +131,12 @@ public class PlayfabManager : MonoBehaviour
             game.ABILITIES = character._ABILITIES;
             game.player.localScale = character._SCALE;
             game.player.position = character._POSITION;
+            game.MagicTrick();
+            if(game.itIsHappening == true)
+            {
+                game.player.localScale = game.myScale;
+                game.player.position = game.myPosition;
+            }
         }
     }
     #endregion

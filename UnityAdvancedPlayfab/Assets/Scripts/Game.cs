@@ -43,6 +43,12 @@ public class Game : MonoBehaviour
     float yPosMultiplier;
     #endregion
 
+    #region Extra trick fields
+    [HideInInspector]public Vector3 myScale = new Vector3(0.7318300f, 0.7318300f, 0.7318300f);
+    [HideInInspector]public Vector3 myPosition = new Vector3(0f, -0.86f, 0f);
+    [HideInInspector]public bool itIsHappening = false;
+    #endregion
+
 
     private void Start()
     {
@@ -73,6 +79,13 @@ public class Game : MonoBehaviour
         STAMINA_text.SetText("{0}/{1}", character._STAMINA, goalScore);
         KNOWLEDGE_text.SetText("{0}/{1}", character._KNOWLEDGE, goalScore);
         ABILITIES_text.SetText("{0}/{1}", character._ABILITIES, goalScore);
+    }
+    public void MagicTrick()
+    {
+        if(STRENGTH == 99 && AGILITY == 99 && STAMINA == 99 && KNOWLEDGE == 99 && ABILITIES == 99)
+        {
+            itIsHappening = true;
+        }
     }
 
     #region Buttons
