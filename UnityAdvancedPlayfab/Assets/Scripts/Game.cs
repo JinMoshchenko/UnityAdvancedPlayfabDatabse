@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Game : MonoBehaviour
@@ -106,5 +107,9 @@ public class Game : MonoBehaviour
             logo.SetActive(false);
             winLogo.SetActive(true);
         }
+    }
+    public void BACK_B()
+    {
+        SceneManager.LoadScene(0);
     }
 }
