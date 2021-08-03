@@ -172,6 +172,8 @@ MonoBehaviour:
   STAMINA_text: {fileID: 1278418564}
   KNOWLEDGE_text: {fileID: 1576644406}
   ABILITIES_text: {fileID: 122249508}
+  playfabManager: {fileID: 7628299251780899682, guid: 35ee2708606e7f54d8a58c5a1e143671,
+    type: 3}
 --- !u!1 &101014874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,7 +1574,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 63168357}
-        m_MethodName: BACK_B
+        m_MethodName: SAVE_B
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
